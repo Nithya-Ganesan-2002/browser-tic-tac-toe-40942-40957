@@ -24,7 +24,7 @@
 .App {
   text-align: center;
   background-color: var(--bg-primary);
-  color: var(--text-primary);
+  /* Removed the color property to allow inline green to take effect */
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

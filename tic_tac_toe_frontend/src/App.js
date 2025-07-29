@@ -105,7 +105,8 @@ function App() {
       justifyContent: "center",
       fontSize: "2.2rem",
       fontWeight: 500,
-      color: board[idx] === 'X' ? PRIMARY : board[idx] === 'O' ? SECONDARY : "#222",
+      // 'O' is red, 'X' uses primary blue, empty is green (general color)
+      color: board[idx] === 'O' ? 'red' : board[idx] === 'X' ? PRIMARY : "green",
       background: "#fff",
       cursor: board[idx] || winnerInfo || isDraw ? "not-allowed" : "pointer",
       transition: "background .15s, color .15s"
@@ -118,6 +119,7 @@ function App() {
   }
 
   // Inline minimal styles for layout, theme, and accenting per requirements
+  // General text color set to green, except 'O' (handled in board cell inline).
   return (
     <div
       className="App"
@@ -127,6 +129,7 @@ function App() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        color: "green"
       }}
     >
       {/* Header */}
@@ -134,7 +137,7 @@ function App() {
         style={{
           marginTop: "56px",
           marginBottom: "24px",
-          color: PRIMARY,
+          color: "green",
           fontWeight: 600,
           fontSize: "2.4rem",
           letterSpacing: ".01em",
@@ -187,7 +190,7 @@ function App() {
             style={{
               fontSize: "1.25rem",
               fontWeight: 500,
-              color: winnerInfo ? PRIMARY : isDraw ? SECONDARY : "#212121",
+              color: "green",
               minHeight: "2.2em",
               letterSpacing: "0.01em"
             }}
@@ -227,12 +230,12 @@ function App() {
           marginBottom: "30px",
           fontSize: "1rem",
           fontWeight: 400,
-          color: "#9e9e9e",
+          color: "green",
           letterSpacing: "0.01em",
           textAlign: "center"
         }}
       >
-        <span style={{ color: PRIMARY, fontWeight: 600 }}>Tic Tac Toe </span>
+        <span style={{ color: "green", fontWeight: 600 }}>Tic Tac Toe </span>
         — Minimalistic React | <span style={{ color: ACCENT }}>@kavia</span>
       </footer>
     </div>
